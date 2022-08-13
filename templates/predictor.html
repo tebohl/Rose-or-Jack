@@ -132,46 +132,53 @@
 
     <hr class="featurette-divider">
 
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">Visualizations. <span class="text-muted">Dig into the data.</span></h2>
-        <p class="lead">See trends in passenger data before you make your selections.</p>
-        <p><a class="btn btn-secondary" href="#">Visualizations &raquo;</a></p>
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+          <form method="POST" action="/send" role="form" , name="mpgform">
+              <div class="form-group">
+                  <label for="input">Pclass</label>
+                  <input type="text" class="form-control" id="inputPclass" name="survivedpclass" placeholder="1, 2 or 3">
+              </div>
+              <!-----div class="form-group">
+                  <label for="input">Name</label>
+                  <input type="text" class="form-control" id="inputName" name="survivedname"
+                      placeholder="Your Name"------>
+              <!----/div----->
+              <div class="form-group">
+                  <label for="input">Sex</label>
+                  <input type="text" class="form-control" id="inputSex" name="survivedsex" placeholder="Male or Female">
+              </div>
+              <div class="form-group">
+                  <label for="input">Age</label>
+                  <input type="text" class="form-control" id="inputAge" name="survivedage" placeholder="Your Age">
+              </div>
+              <div class="form-group">
+                  <label for="input">Family</label>
+                  <input type="text" class="form-control" id="inputFamily" name="survivedfamily"
+                      placeholder="How many folks you are traveling with">
+              </div>
+              <!----div class="form-group">
+                  <label for="input">Ticket</label>
+                  <input type="text" class="form-control" id="inputTicket" name="survivedticket"
+                      placeholder="any 5 digit code"----->
+                      <!---/div---->
+              <div class="form-group">
+                  <label for="input">Fare</label>
+                  <input type="text" class="form-control" id="inputFare" name="survivedfare"
+                      placeholder="Price between 1 and 512">
+                      </div>
+               <!-----div class="form-group">
+                  <label for="input">Embarked (S) or (C)</label>
+                  <input type="text" class="form-control" id="inputEmbarked" name="survivedembarked"
+                              placeholder="C (Cobh) or S (Southampton)"------->
+                      <!----/div--->    
+              </div>
+              <input type="submit" value="submit" class="btn btn-default">
+          </form>
+          <p>{{result}}</p>
       </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#eee"/><image href="../static/images/raft.png" height="100%" width="100%"></svg>
-
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading fw-normal lh-1">Models. <span class="text-muted">Dive into the process.</span></h2>
-        <p class="lead">See how we developed our predictor.</p>
-        <p><a class="btn btn-secondary" href="#">Models &raquo;</a></p>
-      </div>
-      <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="420" height="280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#eee"/><image href="../static/images/titanic_underwater.png" height="100%" width="100%"></svg>
-
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">Predict. <span class="text-muted">Book your ticket.</span></h2>
-        <p class="lead">Make your selections and see if you'll make it through the film.</p>
-        <p><a class="btn btn-secondary" href="#">Predict &raquo;</a></p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#eee"/><image href="../static/images/heart_of_the_ocean.png" height="100%" width="100%"></svg>
-
-      </div>
-    </div>
-
+  </div>
+  
     <hr class="featurette-divider">
 
     <!-- /END THE FEATURETTES -->
