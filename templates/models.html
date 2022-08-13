@@ -121,10 +121,7 @@
   <div class="container">
     <br>
     <h1 class="mt-5">Data Modeling</h1>
-    <p class="lead">Using a <a href="https://www.kaggle.com/datasets/vinicius150987/titanic3?resource=download">complete Titanic passenger dateset</a>, our team focused on the following features: sex, age, passenger class, survival outcome, and the total number of relatives </p>
-    <br>
-    <p class="lead">This machine learning model uses actual Titanic passenger records and survival data to predict if you will make it through James Cameron's epic based on your age, sex, chosen passenger class, and more.</p>
-    <p class="lead">Will <i>you</i> survive this movie? Will you be a Rose, or a Jack...?</p>
+    <p class="lead">Using a <a href="https://www.kaggle.com/datasets/vinicius150987/titanic3?resource=download">complete Titanic passenger dateset</a>, our team focused on the following, pertinent features: sex, age, passenger class, survival outcome, and the total number of relatives onboard. The data was cleaned, hot coded, split into train and test data, and scaled. Specific models tested as follows:</p>
   </div>
 </main>
 
@@ -138,12 +135,11 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">Visualizations. <span class="text-muted">Dig into the data.</span></h2>
-        <p class="lead">See trends in passenger data before you make your selections.</p>
-        <p><a class="btn btn-secondary" href="#">Visualizations &raquo;</a></p>
+        <h2 class="featurette-heading fw-normal lh-1">Logistic Regression</h2>
+        <p class="lead">Using Scikit-learn's Logistic Regression at 1,000 iterations, an 83% test score was achieved.</p>
       </div>
       <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#eee"/><image href="../static/images/raft.png" height="100%" width="100%"></svg>
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#eee"/><image href="../static/images/logistic_regression.png" height="100%" width="100%"></svg>
 
       </div>
     </div>
@@ -152,12 +148,11 @@
 
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading fw-normal lh-1">Models. <span class="text-muted">Dive into the process.</span></h2>
-        <p class="lead">See how we developed our predictor.</p>
-        <p><a class="btn btn-secondary" href="#">Models &raquo;</a></p>
+        <h2 class="featurette-heading fw-normal lh-1">K-Nearest Neighbors (KNN)</h2>
+        <p class="lead">As shown in this chart, eleven tested as the best possible cluster value using KNN, with a higher test score of approximately 85%.</p>
       </div>
       <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="420" height="280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#eee"/><image href="../static/images/titanic_underwater.png" height="100%" width="100%"></svg>
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="240" height="260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#eee"/><image href="../static/images/knn.png" height="100%" width="100%"></svg>
 
       </div>
     </div>
@@ -166,16 +161,28 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">Predict. <span class="text-muted">Book your ticket.</span></h2>
-        <p class="lead">Make your selections and see if you'll make it through the film.</p>
-        <p><a class="btn btn-secondary" href="#">Predict &raquo;</a></p>
+        <h2 class="featurette-heading fw-normal lh-1">Deep Neural Network (DNN)</h2>
+        <p class="lead">After multiple tests, our team's most optimized DNN model ran at 1,621 parameters, with three hidden layers--relu, tanh, relu--and sigmoid as output layer, 100 epochs. Despite the permutations made, 80% remained as the highest test score achieved.</p>
       </div>
       <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#eee"/><image href="../static/images/heart_of_the_ocean.png" height="100%" width="100%"></svg>
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#eee"/><image href="../static/images/dnn.png" height="100%" width="100%"></svg>
 
       </div>
     </div>
 
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">Decision Tree</h2>
+        <p class="lead">Scikit-learn's Random Forest Classifier provided the most successful model with the strongest 85% margin. A deeper look into the featue</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="420" height="280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#eee"/><image href="../static/images/decision_tree1.png" height="100%" width="100%"></svg>
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="420" height="280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#eee"/><image href="../static/images/decision_tree2.png" height="100%" width="100%"></svg>
+
+      </div>
+    </div>
     <hr class="featurette-divider">
 
     <!-- /END THE FEATURETTES -->
