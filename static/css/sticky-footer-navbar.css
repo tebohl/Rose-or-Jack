@@ -1,0 +1,20 @@
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+main > .container {
+  padding: 60px 15px 0;
+}
+
+.stars {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+}
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-6 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
