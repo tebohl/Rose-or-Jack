@@ -1,12 +1,7 @@
 # import necessary libraries
-from models import create_classes
-import os
-from flask import (
-    Flask,
-    render_template,
-    jsonify,
-    request,
-    redirect)
+from pickle import load
+import numpy as np
+from flask import Flask, render_template, request
 
 #################################################
 # Flask Setup
@@ -14,30 +9,74 @@ from flask import (
 app = Flask(__name__)
 
 
+#################################################
+# Load ML Model
+#################################################
+model = load(open('model_randomforrest_2022080848.pkl', 'rb'))
 
 # create route that renders index.html template
 @app.route("/")
 def home():
-    return render_template("index.html")
 
+    # # Method 1 inputs
+    # pclass = ""
+    # name = ""
+    # sex = ""
+    # age = ""
+    # family = ""
+    # ticket = ""
+    # fare = ""
+    # embarked = ""
+
+    prediction_text = ""
+
+    return render_template("index.html", result = prediction_text)
+
+# create route that renders index.html template
+@app.route("/form")
+def form():
+
+    # # Method 1 inputs
+    # pclass = ""
+    # name = ""
+    # sex = ""
+    # age = ""
+    # family = ""
+    # ticket = ""
+    # fare = ""
+    # embarked = ""
+
+    prediction_text = ""
+
+    return render_template("form.html", result = prediction_text)
 
 # Query the database and send the jsonified results
-@app.route("/send", methods=["GET", "POST"])
+@app.route("/send", methods=["POST"])
 def send():
-    if request.method == "POST":
-        feature1 = request.form["feature1"]
-        feature2 = request.form["feature2"]
-        feature3 = request.form["feature2"]
 
-        pet = Pet(feature1=feature1, feature2=feature2, feature3=feature3)
-        db.session.add(pet)
-        db.session.commit()
-        return redirect("/", code=302)
+    # # Method 1:  Obtain form inputs and add to numpy array or dataframe
+    # pclass = request.form["survivedpclass"]
+    # name = request.form["survivedname"]
+    # sex = request.form["survivedsex"]
+    # age = request.form["survivedage"]
+    # family = request.form['survivedfamily']
+    # ticket = request.form['survivedticket']
+    # fare = request.form['survivedfare']
+    # embarked = request.form['survivedembarked']
 
-    return render_template("form.html")
+    # Method 2:  Obtain form inputs and add to numpy array   
+    features = [float(x) for x in request.form.values()]
+    final_features = [np.array(features)]
 
+    # use form results to make prediction
+    prediction = model.predict(final_features)[0]
+
+    # create html content - either single variable, dictionary, or string
+    prediction_text = f"Your fate: {(prediction)}."
+
+    # send prediction to html page
+    return render_template("form.html", result = prediction_text)
 
 
 if __name__ == "__main__":
     app.run()
-
