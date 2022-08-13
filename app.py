@@ -12,7 +12,7 @@ app = Flask(__name__)
 #################################################
 # Load ML Model
 #################################################
-model = load(open('./models/model_randomforrest_2022080848.pkl', 'rb'))
+model = load(open('model_randomforrest_2022080848.pkl', 'rb'))
 
 # create route that renders index.html template
 @app.route("/")
@@ -32,6 +32,23 @@ def home():
 
     return render_template("index.html", result = prediction_text)
 
+# create route that renders index.html template
+@app.route("/form")
+def form():
+
+    # # Method 1 inputs
+    # pclass = ""
+    # name = ""
+    # sex = ""
+    # age = ""
+    # family = ""
+    # ticket = ""
+    # fare = ""
+    # embarked = ""
+
+    prediction_text = ""
+
+    return render_template("form.html", result = prediction_text)
 
 # Query the database and send the jsonified results
 @app.route("/send", methods=["POST"])
@@ -58,7 +75,7 @@ def send():
     prediction_text = f"Your fate: {(prediction)}."
 
     # send prediction to html page
-    return render_template("index.html", result = prediction_text)
+    return render_template("form.html", result = prediction_text)
 
 
 if __name__ == "__main__":
