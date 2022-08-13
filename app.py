@@ -13,6 +13,8 @@ app = Flask(__name__)
 # Load ML Model
 #################################################
 model = load(open('model_randomforrest_2022080848.pkl', 'rb'))
+# load the scaler
+scaler = load(open('scaler.pkl', 'rb'))
 
 # create route that renders index.html template
 @app.route("/")
@@ -72,14 +74,19 @@ def send():
 
     features= [age, fare, family, firstclass, secondclass, thirdclass, female, male]
 
+    
+    # transform the test dataset
     final_features = [np.array(features)]
+    features_scaled = scaler.transform(final_features)
+    
 
     # Method 2:  Obtain form inputs and add to numpy array   
     # features = [float(x) for x in request.form.values()]
     # final_features = [np.array(features)]
 
     # # use form results to make prediction
-    prediction = model.predict(final_features)[0]
+    prediction = model.predict(features_scaled)[0]
+
 
     # create html content - either single variable, dictionary, or string
     prediction_text = f"Your fate: {(prediction)}."
