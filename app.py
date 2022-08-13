@@ -70,7 +70,9 @@ def send():
     else:
         female= 1
 
-    final_features= [age, fare, family, firstclass, secondclass, thirdclass, female, male]
+    features= [age, fare, family, firstclass, secondclass, thirdclass, female, male]
+
+    final_features = [np.array(features)]
 
     # Method 2:  Obtain form inputs and add to numpy array   
     # features = [float(x) for x in request.form.values()]
