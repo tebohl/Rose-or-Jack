@@ -92,7 +92,7 @@
   <!-- Fixed navbar -->
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Will <i>You</i> Survive?</a>
+      <a class="navbar-brand" href="/">Will <i>You</i> Survive?</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -125,39 +125,40 @@
     <br>
     <p class="lead">This machine learning model uses actual Titanic passenger records and survival data to predict if you will make it through James Cameron's epic based on your age, sex, chosen passenger class, and more.</p>
     <p class="lead">Will <i>you</i> survive this movie? Will you be a Rose, or a Jack...?</p>
+    <h3>{{result}}</h3>
+    <h4>{{form_input}}</h4>
   </div>
 </main>
-
   <div class="container marketing">
 
     <hr class="featurette-divider">
 
     <div class="row">
       <div class="col-md-offset-2 col-md-8">
-          <form method="POST" action="/send" role="form" , name="mpgform">
+          <form method="POST" action="/send" role="form" , name="titanicform">
             
             <div class="form-group">
               <label for="input">Age</label>
-              <input type="text" class="form-control" id="inputAge" name="survivedage" placeholder="Your Age">
+              <input type="text" class="form-control" id="inputAge" name="survivedage" placeholder="How old are you?">
             </div>
             <div class="form-group">
               <label for="input">Fare</label>
               <input type="text" class="form-control" id="inputFare" name="survivedfare"
-                  placeholder="Price between 1 and 512">
+                  placeholder="How much are you willing to pay? Tickets cost between $200 and $75,000.">
                   </div>
             <div class="form-group">
               <label for="input">Family</label>
               <input type="text" class="form-control" id="inputFamily" name="survivedfamily"
-                  placeholder="How many folks you are traveling with">
+                  placeholder="How many folks are you traveling with?">
           </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                   <label for="input">Ticket Class</label>
                   <select id="inputAge" name="survivedpclass" class="form-control">
                     <option value="1">1st Class</option>
                     <option value="2">2nd Class</option>
                     <option value="3">3rd Class</option>
-                  </select>
-              </div>
+                  </select> -->
+              <!-- </div> -->
               <div class="form-group">
                 <label for="input">Sex</label>
                 <select id="inputSex" name="survivedsex" class="form-control">
@@ -183,7 +184,6 @@
               </div>
               <input type="submit" value="submit" class="btn btn-default">
           </form>
-          <p>{{result}}</p>
       </div>
   </div>
   

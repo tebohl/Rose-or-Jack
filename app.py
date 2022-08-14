@@ -58,21 +58,31 @@ def send():
     # # Method 1:  Obtain form inputs and add to numpy array or dataframe
     age = float(request.form["survivedage"])
     fare = float(request.form['survivedfare'])
+    converted_fare = fare/154
     family = float(request.form['survivedfamily'])
-    pclass = request.form["survivedpclass"]
-    if pclass == "1":
-        firstclass= 1
-    elif pclass == "2":
-        secondclass= 1
+    if fare < 1000:
+        pclass = "3"
+        thirdclass=1
+    elif fare < 2500:
+        pclass = "2"
+        secondclass=1
     else:
-        thirdclass= 1
+        pclass = "1"
+        firstclass = 1
+    # pclass = request.form["survivedpclass"]
+    # if pclass == "1":
+    #     firstclass= 1
+    # elif pclass == "2":
+    #     secondclass= 1
+    # else:
+    #     thirdclass= 1
     sex = request.form["survivedsex"]
     if sex == "Male":
         male= 1
     else:
         female= 1
 
-    features= [age, fare, family, firstclass, secondclass, thirdclass, female, male]
+    features= [age, converted_fare, family, firstclass, secondclass, thirdclass, female, male]
 
     
     # transform the test dataset
@@ -87,12 +97,15 @@ def send():
     # # use form results to make prediction
     prediction = model.predict(features_scaled)[0]
 
-
     # create html content - either single variable, dictionary, or string
-    prediction_text = f"Your fate: {(prediction)}."
+    if prediction == 1: 
+        prediction_text = "Congratulations! You survived!"
+    else:
+        prediction_text = "Game Over - No room for you on the raft."
+    display_form_input = f"You are a {(int(age))} year old {(sex)}, traveling with {int((family))} family members. You paid ${(fare)} to travel in {(pclass)}st class."
 
     # send prediction to html page
-    return render_template("predictor.html", result = prediction_text)
+    return render_template("predictor.html", form_input = display_form_input, result = prediction_text)
 
 
 if __name__ == "__main__":
