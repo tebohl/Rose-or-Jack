@@ -9,7 +9,7 @@
 - Ishanjit Sidhu
 
 ## Description:
-Are you a Rose or a Jack? We built a machine learning model that predicts whether you will survive a voyage on the Titanic based on your age, passenger class, passenger fare, point of embarkation, and whether you travel solo or with family.
+Are you a Rose or a Jack? We built a machine learning model that predicts whether you will survive a voyage on the Titanic based on your age, gender, passenger class, passenger fare, and whether you travel solo or with family.
 
 ![meme](Images/titanic_ml_meme.jpeg)
 
@@ -20,12 +20,29 @@ https://www.kaggle.com/competitions/titanic/data
 ### Features and definitions included in our model:    
 Survived: Binary value, 0 or 1, where 0 is not survived and 1 is survived  
 Pclass: The ticket class of each passenger, either 1, 2, or 3  
-Name: The name of each passenger  
 Sex: Male or female  
 Age: The age in years of each passenger	  
-SibSp:  The number of siblings/spouses each passenger had (range 0-8)  
-Parch:  The number of parents/children each passenger had (range 0-6)  
-Ticket:  The ticket number of the passenger	  
-Fare: The amount paid by each passenger   
-Embarked: Which station each passenger boarded the ship, either C  (Cork) or S (Southampton)  
+Family: Combined SibSp (The number of siblings/spouses each passenger had (range 0-8) )and Parch (The number of parents/children each passenger had (range 0-6)) columns for total travel companions.  
+Fare: The amount paid by each passenger  
+
+## Methods
+
+After loading our data with Pandas, we removed unecessary columns, combined features that were similar and dropped any null values. The cleaned data was saved as a csv (titanic_cleaned.csv). We then prepared the data for modeling by one hot coding the gender and ticket class features and scaling using SKLearn's standard scaler.  
+We trained several models on our data, with the highest accuracy resulting from the Random Forest Model. You can see details of the models we tried below and via the application.  
+Once we obtained our model, we exported it along with the scaler for use in the predictor form on our application. We deployed our app using Flask, which renders each HTML template and powers the form as well.  
+For some research prior to making your selections on the form, we also included some visualizations with Matplotlib on the Models page and a Tableau dashboard on the Visuals page.
+
+## Application and Form
+
+After running our application (app.py), you'll land on our home page as shown below. You can navigate through the pages via the links in the header or using the buttons next to each summary. You can also access the predictor form via the buttons below Rose and Jack's bios.  
+![meme](Images/indexscreenshot.png)
+
+A screenshot of the models page is below, we trained KNN and Deep Neural Network models on our data in addition to the Random Forest Model which yielded ~.85 accuracy.
+![meme](Images/modelscreenshot.png)
+
+You can also scroll through several plots created in Tableau on the Visualizations page, which display trends in survival based on gender, ticket class, fare and travel companions.
+![meme](Images/tableauscreenshot.png)
+
+Finally, on the Predictor page, you can enter your credentials to determine your fate on the Titanic based on the model we built. Choose carefully!
+
 
