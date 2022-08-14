@@ -120,11 +120,8 @@
 <main class="flex-shrink-0">
   <div class="container">
     <br>
-    <h1 class="mt-5">A Night to Remember?</h1>
-    <p class="lead">On the evening of December 17, 1997, the film Titanic was released, directed, written, produced, and co-edited by James Cameron. To some, it was an unprecedented, cinematic achievement. Others were left wondering, "Didn't the Titanic <i>sink</i> in less time than this film is taking...?" 
-    <br>
-    <p class="lead">This machine learning model uses actual Titanic passenger records and survival data to predict if you will make it through James Cameron's epic based on your age, sex, chosen passenger class, and more.</p>
-    <p class="lead">Will <i>you</i> survive this movie? Will you be a Rose, or a Jack...?</p>
+    <h1 class="mt-5">Is there room for YOU on the raft?</h1>
+    <p class="lead">Enter your choices below, and learn your fate...</p>
     <h3>{{result}}</h3>
     <h4>{{form_input}}</h4>
   </div>
@@ -138,27 +135,48 @@
           <form method="POST" action="/send" role="form" , name="titanicform">
             
             <div class="form-group">
-              <label for="input">Age</label>
-              <input type="text" class="form-control" id="inputAge" name="survivedage" placeholder="How old are you?">
-            </div>
+              <fieldset><label>Choose your Cabin</label></fieldset>
+              <label for="input">1st Class: $2,500-$75,000</label>
+                <input type="radio" name="class" class="sr-only" id="1st" value="1st">
+                <label for="1st">
+                  <img class="cimage" src="../static/images/1st.png" alt="1st">
+                </label>
+                <label for="input">2nd Class: $1,000-$2,500</label>
+                <input type="radio" name="class" class="sr-only" id="2nd" value="2nd">
+                <label for="2nd">
+                  <img class="cimage" src="../static/images/2nd.png" alt="2nd">
+                </label>
+                <label for="input">3rd Class: $200-$1,000</label>
+                <input type="radio" name="class" class="sr-only" id="3rd" value="3rd">
+                <label for="3rd">
+                  <img class="cimage" src="../static/images/3rd.png" alt="3rd">
+              </label>
+            </div> 
+
             <div class="form-group">
               <label for="input">Fare</label>
-              <input type="text" class="form-control" id="inputFare" name="survivedfare"
-                  placeholder="How much are you willing to pay? Tickets cost between $200 and $75,000.">
+              <input type="number" class="form-control" id="inputFare" name="survivedfare"
+                  placeholder="How much are you willing to pay?" min="200" max="75000">
                   </div>
+
+            <div class="form-group">
+                  <label for="input">Name</label>
+                  <input type="text" class="form-control" id="inputName" name="survivedname"
+                      placeholder="What is your name?">
+            </div>
+            
+            <div class="form-group">
+              <label for="input">Age</label>
+              <input type="number" class="form-control" id="inputAge" name="survivedage" 
+                placeholder="How old are you?" max="100">
+            </div>
+            
             <div class="form-group">
               <label for="input">Family</label>
-              <input type="text" class="form-control" id="inputFamily" name="survivedfamily"
-                  placeholder="How many folks are you traveling with?">
+              <input type="number" class="form-control" id="inputFamily" name="survivedfamily"
+                  placeholder="How many people are you bringing with you?" max="10">
           </div>
-              <!-- <div class="form-group">
-                  <label for="input">Ticket Class</label>
-                  <select id="inputAge" name="survivedpclass" class="form-control">
-                    <option value="1">1st Class</option>
-                    <option value="2">2nd Class</option>
-                    <option value="3">3rd Class</option>
-                  </select> -->
-              <!-- </div> -->
+
               <div class="form-group">
                 <label for="input">Sex</label>
                 <select id="inputSex" name="survivedsex" class="form-control">
@@ -166,23 +184,14 @@
                   <option value="Female">Female</option>
                 </select>
             </div>
-              <!-----div class="form-group">
-                  <label for="input">Name</label>
-                  <input type="text" class="form-control" id="inputName" name="survivedname"
-                      placeholder="Your Name"------>
-              <!----/div----->
-              <!----div class="form-group">
-                  <label for="input">Ticket</label>
-                  <input type="text" class="form-control" id="inputTicket" name="survivedticket"
-                      placeholder="any 5 digit code"----->
-                      <!---/div---->
+
                <!-----div class="form-group">
                   <label for="input">Embarked (S) or (C)</label>
                   <input type="text" class="form-control" id="inputEmbarked" name="survivedembarked"
                               placeholder="C (Cobh) or S (Southampton)"------->
                       <!----/div--->    
-              </div>
-              <input type="submit" value="submit" class="btn btn-default">
+        </div>
+          <input type="submit" value="submit" class="btn btn-dark">
           </form>
       </div>
   </div>
