@@ -58,18 +58,3 @@ body {
     width: 25%;
   }
   }
-  
-  label {
-    cursor: pointer;
-    filter: grayscale(100%);
-  }
-  label:hover {
-    filter: grayscale(0);
-  }
-  input[type="radio"]:checked + label {
-    filter: grayscale(0);
-  }
-  .cimage {
-    width: 300px;
-    height: 250px;
-  }

@@ -80,6 +80,21 @@
       margin-bottom: 1.5rem;
       text-align: center;
       }
+
+      label {
+      cursor: pointer;
+      filter: grayscale(100%);
+      }
+      label:hover {
+        filter: grayscale(0);
+      }
+      input[type="radio"]:checked + label {
+        filter: grayscale(0);
+      }
+      .cimage {
+        width: 225px;
+        height: 175px;
+      }
     </style>
 
     
@@ -131,7 +146,7 @@
     <hr class="featurette-divider">
 <!----------Begin Form Content---->
     <div class="row">
-      <div class="col-md-offset-2 col-md-8">
+      <div class="col-md-offset-2 col-md-12">
           <form method="POST" action="/send" role="form" , name="titanicform">
             
             <div class="form-group">
