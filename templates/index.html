@@ -112,14 +112,12 @@
           </li>
         </ul>
         <form class="d-flex" role="search">
-          <audio tabindex="0" autoplay loop controls id="myAudio">
+          <audio tabindex="0" loop="loop" controls id="myAudio">
             <source src="../static/sound/group1s_hearts_go_on.mp3" type="audio/mpeg"></source>
             Your browser does not support HTML5 audio.
           </audio>
-          <!-- <embed src="../static/sound/group1s_hearts_go_on.mp3" width="180" height="90" loop="true" autostart="true" hidden="true" /> -->
-          <!-- <audio loop autoplay>
-            <source src="../static/sound/group1s_hearts_go_on.mp3" type="audio/filetype">
-          </audio> -->
+          <!-- <embed src="../static/sound/group1s_hearts_go_on.mp3" loop="true" autostart="true" width="2" height="0"> -->
+
         </form>
       </div>
     </div>
@@ -218,8 +216,9 @@
 
     <!-- JavaScript for Sound -->
     <script>
-    var x = document.getElementById("myAudio");
-    x.play(); 
+      $(document).ready(function() {
+          $("#myAudio").get(0).play();
+      });
     </script>
 
   </body>
