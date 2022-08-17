@@ -1,6 +1,12 @@
 # Misc
 .DS_Store
 desktop.ini
+README.md
+Rose_Jack.ipynb
+feature_engineering.ipynb
+Resources/
+Images/
+.ipynb_checkpoints/
 
 # Config files for keys
 config.py
