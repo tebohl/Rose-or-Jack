@@ -19,12 +19,12 @@ https://www.kaggle.com/competitions/titanic/data
 https://www.kaggle.com/datasets/vinicius150987/titanic3?resource=download
 
 ### Features and definitions included in our model:    
-Survived: Binary value, 0 or 1, where 0 is not survived and 1 is survived  
-Pclass: The ticket class of each passenger, either 1, 2, or 3  
-Sex: Male or female  
-Age: The age in years of each passenger	  
-Family: Combined SibSp (The number of siblings/spouses each passenger had (range 0-8) )and Parch (The number of parents/children each passenger had (range 0-6)) columns for total travel companions.  
-Fare: The amount paid by each passenger  
+* Survived: Binary value, 0 or 1, where 0 is not survived and 1 is survived  
+* Pclass: The ticket class of each passenger, either 1, 2, or 3  
+* Sex: Male or female  
+* Age: The age in years of each passenger	  
+* Family: Combined SibSp (The number of siblings/spouses each passenger had (range 0-8) )and Parch (The number of parents/children each passenger had (range 0-6)) * columns for total travel companions.  
+* Fare: The amount paid by each passenger  
 
 ## Methods
 
