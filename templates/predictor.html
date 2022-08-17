@@ -153,19 +153,22 @@
               <fieldset><label>Choose your Cabin</label></fieldset>
               <label for="input">1st Class: $2,500-$75,000</label>
                 <input type="radio" name="class" class="sr-only" id="1st" value="1st">
-                <label for="1st">
-                  <img class="cimage" src="../static/images/1st.png" alt="1st">
-                </label>
-                <label for="input">2nd Class: $1,000-$2,500</label>
+                  <label for="1st">
+                    <img class="cimage" src="../static/images/1st.png" alt="1st">
+                  </label>
+                  <br>
+              <label for="input">2nd Class: $1,000-$2,500</label>
                 <input type="radio" name="class" class="sr-only" id="2nd" value="2nd">
-                <label for="2nd">
-                  <img class="cimage" src="../static/images/2nd.png" alt="2nd">
-                </label>
-                <label for="input">3rd Class: $200-$1,000</label>
+                  <label for="2nd">
+                    <img class="cimage" src="../static/images/2nd.png" alt="2nd">
+                  </label>
+                  <br>
+              <label for="input">3rd Class: $200-$1,000</label>
                 <input type="radio" name="class" class="sr-only" id="3rd" value="3rd">
-                <label for="3rd">
-                  <img class="cimage" src="../static/images/3rd.png" alt="3rd">
-              </label>
+                  <label for="3rd">
+                    <img class="cimage" src="../static/images/3rd.png" alt="3rd">
+                  </label>
+                  <br>
             </div> 
 
             <div class="form-group">
@@ -183,13 +186,13 @@
             <div class="form-group">
               <label for="input">Age</label>
               <input type="number" class="form-control" id="inputAge" name="survivedage" 
-                placeholder="How old are you?" max="100">
+                placeholder="How old are you?" min = "0" max="100">
             </div>
             
             <div class="form-group">
               <label for="input">Family</label>
               <input type="number" class="form-control" id="inputFamily" name="survivedfamily"
-                  placeholder="How many people are you bringing with you?" max="10">
+                  placeholder="How many people are you bringing with you?" min = "0" max="10">
           </div>
 
               <div class="form-group">
