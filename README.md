@@ -16,6 +16,7 @@ Are you a Rose or a Jack? We built a machine learning model that predicts whethe
 
 ## Dataset(s):
 https://www.kaggle.com/competitions/titanic/data  
+https://www.kaggle.com/datasets/vinicius150987/titanic3?resource=download
 
 ### Features and definitions included in our model:    
 Survived: Binary value, 0 or 1, where 0 is not survived and 1 is survived  
