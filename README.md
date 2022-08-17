@@ -26,7 +26,7 @@ https://www.kaggle.com/datasets/vinicius150987/titanic3?resource=download
 * Family: Combined SibSp (The number of siblings/spouses each passenger had (range 0-8) )and Parch (The number of parents/children each passenger had (range 0-6)) * columns for total travel companions.  
 * Fare: The amount paid by each passenger  
 
-## Methods
+## Methods:
 
 After loading our data with Pandas, we removed unecessary columns, combined features that were similar and dropped any null values. The cleaned data was saved as a csv (titanic_cleaned.csv). We then prepared the data for modeling by one hot coding the gender and ticket class features and scaling using SKLearn's standard scaler.  
 
@@ -36,7 +36,7 @@ Once we obtained our model, we exported it along with the scaler for use in the 
 
 For some research prior to making your selections on the form, we also included some visualizations with Matplotlib on the Models page and a Tableau dashboard on the Visuals page.
 
-## Application and Form
+## Application and Form:
 
 Click [here](https://roseorjack.herokuapp.com/) to access the application.
 
